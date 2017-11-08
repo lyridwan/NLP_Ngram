@@ -1,7 +1,7 @@
 <section id='sidebar'>
   <i class='icon-align-justify icon-large' id='toggle'></i>
   <ul id='dock'>
-    <li class='active launcher'>
+    <li class='launcher'>
       <i class='icon-dashboard'></i>
       <a href="index.php">Dashboard</a>
     </li>
@@ -11,12 +11,12 @@
       <ul class='dropdown-menu'>
         <li class='dropdown-header'>N-Gram</li>
         <li>
-          <a href='#'>Unigram</a>
+          <a href='unigram.php'>Unigram</a>
         </li>
         <li>
-          <a href='#'>Bigram</a>
+          <a href='bigram.php'>Bigram</a>
         </li>
-        <li>
+        <!-- <li>
           <a href='#'>Trigram</a>
         </li>
         <li>
@@ -24,7 +24,7 @@
         </li>
         <li>
           <a href='#'>Pentagram</a>
-        </li>
+        </li> -->
       </ul>
     </li>
     <li class='launcher'>
@@ -33,8 +33,8 @@
     </li>
     
     <li class='launcher'>
-      <i class='icon-bug'></i>
-      <a href='#'>Feedback</a>
+      <i class='icon-info-sign'></i>
+      <a href='about.php'>About</a>
     </li>
   </ul>
   <div data-toggle='tooltip' id='beaker' title='Made by lab2023'></div>
