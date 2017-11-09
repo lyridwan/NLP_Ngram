@@ -19,10 +19,10 @@
         <li>
           <a href='trigram.php'>Trigram</a>
         </li>
-        <!-- <li>
-          <a href='#'>Tetragram</a>
-        </li>
         <li>
+          <a href='tetragram.php'>Tetragram</a>
+        </li>
+        <!-- <li>
           <a href='#'>Pentagram</a>
         </li> -->
       </ul>

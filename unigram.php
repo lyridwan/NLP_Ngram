@@ -133,12 +133,17 @@
                       <tbody>
                         <?php 
                           $query = $db->query("SELECT * FROM bigram WHERE WORD1!='".$firstWord."' ORDER BY RAND() LIMIT 5");
-                          while ($data = $query->fetch_array()) {
-                            echo "<tr>";
-                            echo "<td class='text-left'>".$data['WORD1'].'</td>';
-                            echo "<td class='text-left'>".$data['COUNT'].'</td>';
-                            echo "<td class='text-left'>".$data['PROBT'].'</td>';
-                            echo "</tr>";
+                          
+                          if ($query->fetch_assoc() != NULL) {
+                            while ($data = $query->fetch_array()) {
+                              echo "<tr>";
+                              echo "<td class='text-left'>".$data['WORD1'].'</td>';
+                              echo "<td class='text-left'>".$data['COUNT'].'</td>';
+                              echo "<td class='text-left'>".$data['PROBT'].'</td>';
+                              echo "</tr>";
+                            }
+                          }else{
+                            echo "<td class='text-center' colspan='3'>No Data Available.";
                           }
                         ?>
                       </tbody>

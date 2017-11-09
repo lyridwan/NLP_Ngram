@@ -18,7 +18,7 @@
       <!-- Tools -->
       <section id='tools'>
         <ul class='breadcrumb' id='breadcrumb'>
-          <li class='title'>Bigram</li>
+          <li class='title'>Tetragram</li>
         </ul>
         <div id='toolbar'>
           
@@ -34,15 +34,23 @@
           <div class='panel-body'>
             <form action="" method="POST">
               <fieldset>
-                <legend>Bigram Probability Checker</legend>
+                <legend>Tetragram Probability Checker</legend>
                 <div class='form-group row'>
-                  <div class='col-lg-4'>
+                  <div class='col-lg-2'>
                     <label class='control-label'>First Word</label>
                     <input type="text" id="firstString" class="form-control" placeholder="First Word" name="firstWord" required="">
                   </div>
-                  <div class='col-lg-4'>
+                  <div class='col-lg-2'>
                     <label class='control-label'>Second Word</label>
-                    <input type="text" id="secondString" class="form-control" placeholder="First Word" name="secondWord" required="">
+                    <input type="text" id="secondString" class="form-control" placeholder="Second Word" name="secondWord" required="">
+                  </div>
+                  <div class='col-lg-2'>
+                    <label class='control-label'>Third Word</label>
+                    <input type="text" id="thirdString" class="form-control" placeholder="Third Word" name="thirdWord" required="">
+                  </div>
+                  <div class='col-lg-2'>
+                    <label class='control-label'>Fourth Word</label>
+                    <input type="text" id="fourthString" class="form-control" placeholder="Fourth Word" name="fourthWord" required="">
                   </div>
                 </div>
               </fieldset>
@@ -57,8 +65,10 @@
         if (isset($_POST['btnSubmit'])) {
           $firstWord = $_POST['firstWord'];
           $secondWord = $_POST['secondWord'];
+          $thirdWord = $_POST['thirdWord'];
+          $fourthWord = $_POST['fourthWord'];
 
-          $query = $db->query("SELECT COUNT,PROBT FROM bigram WHERE WORD1='".$firstWord."' AND WORD2 ='".$secondWord."'");
+          $query = $db->query("SELECT COUNT,PROBT FROM tetragram WHERE WORD1='".$firstWord."' AND WORD2 ='".$secondWord."' AND WORD3 ='".$thirdWord."' AND WORD4 ='".$fourthWord."'");
           $data = $query->fetch_assoc();
         ?>
 
@@ -73,7 +83,7 @@
                 
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  Bigram Detail
+                  Trigram Detail
                 </div>
                 <div class="panel-body">
                   <table class="table table-condensed table-responsive text-left">
@@ -83,7 +93,7 @@
                         <td>:</td>
                         <td>
                           <?php 
-                            echo $firstWord.' '.$secondWord.'<br>';                          
+                            echo $firstWord.' '.$secondWord.' '.$thirdWord.' '.$fourthWord.'<br>';                          
                           ?>
                         </td>
                       </tr>
@@ -122,7 +132,7 @@
               <div class='col-md-6'>
                 <div class="panel panel-success">
                   <div class="panel-heading">
-                    Similiar Bigram
+                    Similiar Trigram
                   </div>
 
                   <div class="panel-body">
@@ -137,12 +147,12 @@
                       </thead>
                       <tbody>
                         <?php 
-                          $query = $db->query("SELECT * FROM bigram WHERE WORD1='".$firstWord."' AND WORD2!='".$secondWord."' ORDER BY PROBT DESC LIMIT 5");
-                          
+                          $query = $db->query("SELECT * FROM tetragram WHERE WORD1='".$firstWord."' AND WORD2='".$secondWord."' AND WORD4!='".$fourthWord."' ORDER BY PROBT DESC LIMIT 5");
+
                           if ($query->fetch_assoc() != NULL) {
                             while ($data = $query->fetch_array()) {
                               echo "<tr>";
-                              echo "<td class='text-left'>".$data['WORD1'].' '.$data['WORD2'].'</td>';
+                              echo "<td class='text-left'>".$data['WORD1'].' '.$data['WORD2'].' '.$data['WORD3'].' '.$data['WORD4'].'</td>';
                               echo "<td class='text-left'>".$data['COUNT'].'</td>';
                               echo "<td class='text-left'>".$data['PROBT'].'</td>';
                               echo "</tr>";

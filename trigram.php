@@ -143,12 +143,17 @@
                       <tbody>
                         <?php 
                           $query = $db->query("SELECT * FROM trigram WHERE WORD1='".$firstWord."' AND WORD2='".$secondWord."' AND WORD3!='".$thirdWord."' ORDER BY PROBT DESC LIMIT 5");
-                          while ($data = $query->fetch_array()) {
-                            echo "<tr>";
-                            echo "<td class='text-left'>".$data['WORD1'].' '.$data['WORD2'].' '.$data['WORD3'].'</td>';
-                            echo "<td class='text-left'>".$data['COUNT'].'</td>';
-                            echo "<td class='text-left'>".$data['PROBT'].'</td>';
-                            echo "</tr>";
+                          
+                          if ($query->fetch_assoc() != NULL) {
+                            while ($data = $query->fetch_array()) {
+                              echo "<tr>";
+                              echo "<td class='text-left'>".$data['WORD1'].' '.$data['WORD2'].' '.$data['WORD3'].'</td>';
+                              echo "<td class='text-left'>".$data['COUNT'].'</td>';
+                              echo "<td class='text-left'>".$data['PROBT'].'</td>';
+                              echo "</tr>";
+                            }
+                          }else{
+                            echo "<td class='text-center' colspan='3'>No Data Available.";
                           }
                         ?>
                       </tbody>
