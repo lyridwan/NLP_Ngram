@@ -149,7 +149,7 @@
                         <?php 
                           $query = $db->query("SELECT * FROM tetragram WHERE WORD1='".$firstWord."' AND WORD2='".$secondWord."' AND WORD4!='".$fourthWord."' ORDER BY PROBT DESC LIMIT 5");
 
-                          if ($query->fetch_assoc() != NULL) {
+                          if ($query->num_rows != 0) {
                             while ($data = $query->fetch_array()) {
                               echo "<tr>";
                               echo "<td class='text-left'>".$data['WORD1'].' '.$data['WORD2'].' '.$data['WORD3'].' '.$data['WORD4'].'</td>';

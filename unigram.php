@@ -134,7 +134,7 @@
                         <?php 
                           $query = $db->query("SELECT * FROM bigram WHERE WORD1!='".$firstWord."' ORDER BY RAND() LIMIT 5");
                           
-                          if ($query->fetch_assoc() != NULL) {
+                          if ($query->num_rows != 0) {
                             while ($data = $query->fetch_array()) {
                               echo "<tr>";
                               echo "<td class='text-left'>".$data['WORD1'].'</td>';
