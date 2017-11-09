@@ -16,10 +16,10 @@
         <li>
           <a href='bigram.php'>Bigram</a>
         </li>
-        <!-- <li>
-          <a href='#'>Trigram</a>
-        </li>
         <li>
+          <a href='trigram.php'>Trigram</a>
+        </li>
+        <!-- <li>
           <a href='#'>Tetragram</a>
         </li>
         <li>
