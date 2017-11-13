@@ -1,5 +1,4 @@
 <section id='sidebar'>
-  <i class='icon-align-justify icon-large' id='toggle'></i>
   <ul id='dock'>
     <li class='launcher'>
       <i class='icon-dashboard'></i>
@@ -22,9 +21,9 @@
         <li>
           <a href='tetragram.php'>Tetragram</a>
         </li>
-        <!-- <li>
-          <a href='#'>Pentagram</a>
-        </li> -->
+        <li>
+          <a href='pentagram.php'>Pentagram</a>
+        </li>
       </ul>
     </li>
     <li class='launcher'>

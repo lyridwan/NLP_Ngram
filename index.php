@@ -59,6 +59,7 @@ include 'navbar.php';
                   <ul>
                      <li>performing normalization so that each line of the document contains maximum of 100 characters.</li>
                      <li>removing extra space characters at the end of paragraph, in-between paragraphs, and before any punctuation marks.</li>
+                     <li>removing extra characters like <code>. , ? !.</code></li>
                      <li>replacing some non-ASCII characters with its ASCII counterpart, for example replacing <code>”</code> character inside document with <code>&quot;</code> character.</li>
                   </ul>
                   <p>Statistics of this plagiarism corpus in bahasa Indonesia are as follows.</p>
@@ -85,14 +86,22 @@ include 'navbar.php';
                <div class="container">
                   <h4>Corpus statics</h4>
                <hr>
+               <?php 
+                  $query = $db->query("SELECT (SELECT SUM(COUNT) FROM unigram) as TOTAL, (SELECT COUNT(*) FROM unigram) as COUNT1, (SELECT COUNT(*) FROM bigram) as COUNT2, (SELECT COUNT(*) FROM trigram) as COUNT3, (SELECT COUNT(*) FROM tetragram) as COUNT4, (SELECT COUNT(*) FROM pentagram) as COUNT5");
+                  if ($query) {
+                     if ($query->num_rows != 0) {
+                        $data = $query->fetch_assoc();
+                     }
+                  }
+               ?>
                <ul>
                <li>Source documents = <strong>30</strong></li>
-               <li>Total Words = <strong>35</strong></li>
-               <li>Total Unigram = <strong>20</strong></li>
-               <li>Total Bigram = <strong>20</strong></li>
-               <li>Total Trigram = <strong>20</strong></li>
-               <li>Total Tetragram = <strong>20</strong></li>
-               <li>Total Pentagram = <strong>20</strong></li>
+               <li>Total Words = <strong><?php echo (($query) ? (($query->num_rows != 0) ? $data['TOTAL'] : 0) : 0); ?></strong></li>
+               <li>Total Unigram = <strong><?php echo (($query) ? (($query->num_rows != 0) ? $data['COUNT1'] : 0) : 0); ?></strong></li>
+               <li>Total Bigram = <strong><?php echo (($query) ? (($query->num_rows != 0) ? $data['COUNT2'] : 0) : 0); ?></strong></li>
+               <li>Total Trigram = <strong><?php echo (($query) ? (($query->num_rows != 0) ? $data['COUNT3'] : 0) : 0); ?></strong></li>
+               <li>Total Tetragram = <strong><?php echo (($query) ? (($query->num_rows != 0) ? $data['COUNT4'] : 0) : 0); ?></strong></li>
+               <li>Total Pentagram = <strong><?php echo (($query) ? (($query->num_rows != 0) ? $data['COUNT5'] : 0) : 0); ?></strong></li>
                </ul>
                <p>Corpus cited From: <a href="https://github.com/felikjunvianto/korpus-plagiarisme-indonesia/tree/master/source-documents">here</p>
                </div>

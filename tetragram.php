@@ -83,7 +83,7 @@
                 
               <div class="panel panel-default">
                 <div class="panel-heading">
-                  Trigram Detail
+                  Tetragram Detail
                 </div>
                 <div class="panel-body">
                   <table class="table table-condensed table-responsive text-left">
@@ -132,7 +132,7 @@
               <div class='col-md-6'>
                 <div class="panel panel-success">
                   <div class="panel-heading">
-                    Similiar Trigram
+                    Similiar Tetragram
                   </div>
 
                   <div class="panel-body">

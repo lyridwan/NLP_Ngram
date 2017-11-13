@@ -2,63 +2,14 @@
     include 'header.php';
   ?>
 
+  </head>
   <body class='main page'>
     <!-- Navbar -->
-    <div class='navbar navbar-default' id='navbar'>
-      <a class='navbar-brand' href='#'>
-        <i class='icon-beer'></i>
-        Hierapolis
-      </a>
-      <ul class='nav navbar-nav pull-right'>
-        <li class='dropdown'>
-          <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
-            <i class='icon-envelope'></i>
-            Messages
-            <span class='badge'>5</span>
-            <b class='caret'></b>
-          </a>
-          <ul class='dropdown-menu'>
-            <li>
-              <a href='#'>New message</a>
-            </li>
-            <li>
-              <a href='#'>Inbox</a>
-            </li>
-            <li>
-              <a href='#'>Out box</a>
-            </li>
-            <li>
-              <a href='#'>Trash</a>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href='#'>
-            <i class='icon-cog'></i>
-            Settings
-          </a>
-        </li>
-        <li class='dropdown user'>
-          <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
-            <i class='icon-user'></i>
-            <strong>John DOE</strong>
-            <img class="img-rounded" src="http://placehold.it/20x20/ccc/777" />
-            <b class='caret'></b>
-          </a>
-          <ul class='dropdown-menu'>
-            <li>
-              <a href='#'>Edit Profile</a>
-            </li>
-            <li class='divider'></li>
-            <li>
-              <a href="/">Sign out</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div>
+    <?php
+        include 'navbar.php';
+    ?>
+
     <div id='wrapper'>
-      
       <!-- Sidebar -->
       <?php
         include 'sidebar.php';
@@ -67,9 +18,7 @@
       <!-- Tools -->
       <section id='tools'>
         <ul class='breadcrumb' id='breadcrumb'>
-          <li class='title'>Forms</li>
-          <li><a href="#">Lorem</a></li>
-          <li class='active'><a href="#">ipsum</a></li>
+          <li class='title'>Pentagram</li>
         </ul>
         <div id='toolbar'>
           
@@ -79,220 +28,162 @@
       <div id='content'>
         <div class='panel panel-default'>
           <div class='panel-heading'>
-            <i class='icon-edit icon-large'></i>
-            Form Default
+            <i class='icon-pencil icon-large'></i>
+              Input
           </div>
           <div class='panel-body'>
-            <form>
+            <form action="" method="POST">
               <fieldset>
-                <legend>Default Inputs</legend>
-                <div class='form-group'>
-                  <label class='control-label'>Text field</label>
-                  <input class='form-control' placeholder='Enter username' type='text'>
-                </div>
-                <div class='form-group'>
-                  <label class='control-label'>Password field</label>
-                  <input class='form-control' placeholder='Enter password' type='password'>
-                </div>
-                <div class='form-group'>
-                  <label class='control-label'>Input field with help</label>
-                  <input class='form-control' placeholder='.help-block'>
-                  <p class='help-block'>Example block-level help text here.</p>
-                </div>
-                <div class='form-group'>
-                  <label class='control-label'>Disabled field</label>
-                  <input class='form-control' disabled placeholder='This is field is disabled!'>
-                </div>
-                <div class='form-group'>
-                  <label class='control-label'>Tooltip field</label>
-                  <input class='form-control' data-toggle='tooltip' placeholder='This is field is disabled!' title='Input tips here'>
-                </div>
-                <div class='form-group'>
-                  <label class='control-label'>Textarea field</label>
-                  <textarea class='form-control' rows='4'></textarea>
-                </div>
-                <div class='form-group'>
-                  <label class='control-label'>File input</label>
-                  <input type='file'>
-                </div>
-                <div class='form-group'>
-                  <label class='control-label'>Large field</label>
-                  <input class='form-control input-lg' placeholder='.input-lg' type='text'>
-                </div>
-                <div class='form-group'>
-                  <label class='control-label'>Small field</label>
-                  <input class='form-control input-sm' placeholder='.input-sm' type='text'>
-                </div>
+                <legend>Pentagram Probability Checker</legend>
                 <div class='form-group row'>
                   <div class='col-lg-2'>
-                    <label class='control-label'>Column sizing</label>
-                    <input class='form-control' placeholder='.col-lg-2' type='text'>
+                    <label class='control-label'>First Word</label>
+                    <input type="text" id="firstString" class="form-control" placeholder="First Word" name="firstWord" required="">
                   </div>
-                  <div class='col-lg-3'>
-                    <label class='control-label'>Column sizing</label>
-                    <input class='form-control' placeholder='.col-lg-3' type='text'>
+                  <div class='col-lg-2'>
+                    <label class='control-label'>Second Word</label>
+                    <input type="text" id="secondString" class="form-control" placeholder="Second Word" name="secondWord" required="">
                   </div>
-                  <div class='col-lg-7'>
-                    <label class='control-label'>Column sizing</label>
-                    <input class='form-control' placeholder='.col-lg-7' type='text'>
+                  <div class='col-lg-2'>
+                    <label class='control-label'>Third Word</label>
+                    <input type="text" id="thirdString" class="form-control" placeholder="Third Word" name="thirdWord" required="">
+                  </div>
+                  <div class='col-lg-2'>
+                    <label class='control-label'>Fourth Word</label>
+                    <input type="text" id="fourthString" class="form-control" placeholder="Fourth Word" name="fourthWord" required="">
+                  </div>
+                  <div class='col-lg-2'>
+                    <label class='control-label'>Fifth Word</label>
+                    <input type="text" id="fifthString" class="form-control" placeholder="Fifth Word" name="fifthWord" required="">
                   </div>
                 </div>
               </fieldset>
-              <fieldset>
-                <legend>Input Validation States</legend>
-                <div class='form-group has-warning'>
-                  <label class='control-label'>Input field with help</label>
-                  <input class='form-control' placeholder='.has-warning'>
-                  <p class='help-block'>Example block-level help text here.</p>
+              
+              <div class='form-group'>
+                <input class='btn btn-success' type='submit' name="btnSubmit" value="Generate">
+              </div>
+            </form>
+          </div>
+        </div>
+        <?php 
+        if (isset($_POST['btnSubmit'])) {
+          $firstWord = $_POST['firstWord'];
+          $secondWord = $_POST['secondWord'];
+          $thirdWord = $_POST['thirdWord'];
+          $fourthWord = $_POST['fourthWord'];
+          $fifthWord = $_POST['fifthWord'];
+
+          $query = $db->query("SELECT COUNT,PROBT FROM pentagram WHERE WORD1='".$firstWord."' AND WORD2 ='".$secondWord."' AND WORD3 ='".$thirdWord."' AND WORD4 ='".$fourthWord."' AND WORD5 ='".$fifthWord."'");
+          $data = $query->fetch_assoc();
+        ?>
+
+        <div class='panel panel-default'>
+          <div class='panel-heading'>
+            <i class='icon-ok icon-large'></i>
+            Result
+          </div>
+          <div id='txtNgram' class='panel-body'>            
+            <div class='row'>
+              <div class='col-md-6 text-center'>
+                
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  Pentagram Detail
                 </div>
-                <div class='form-group has-error'>
-                  <label class='control-label'>Input field with help</label>
-                  <input class='form-control' placeholder='.has-error'>
-                  <p class='help-block'>Example block-level help text here.</p>
+                <div class="panel-body">
+                  <table class="table table-condensed table-responsive text-left">
+                    <tbody>
+                      <tr>
+                        <td><strong>Words</strong></td>
+                        <td>:</td>
+                        <td>
+                          <?php 
+                            echo $firstWord.' '.$secondWord.' '.$thirdWord.' '.$fourthWord.' '.$fifthWord.'<br>';
+                          ?>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>Count</strong></td>
+                        <td>:</td>
+                        <td>
+                          <?php
+                            if (isset($data)) {
+                              echo $data['COUNT'];
+                            }else{
+                              echo '0';
+                            }
+                          ?>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>Probability</strong></td>
+                        <td>:</td>
+                        <td>
+                          <?php 
+                            if (isset($data)) {
+                              echo $data['PROBT'];
+                            }else{
+                              echo '0';
+                            }                       
+                          ?>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
-                <div class='form-group has-success'>
-                  <label class='control-label'>Input field with help</label>
-                  <input class='form-control' placeholder='.has-success'>
-                  <p class='help-block'>Example block-level help text here.</p>
-                </div>
-              </fieldset>
-              <fieldset>
-                <legend>Checkboxes and radios</legend>
-                <div class='form-group'>
-                  <label class='control-label'>Checkbox</label>
-                  <div class='checkbox'>
-                    <input type='checkbox' value=''>
-                    Option one is this and that&mdash;be sure to include why it's great
+              </div>
+              </div>
+
+              <div class='col-md-6'>
+                <div class="panel panel-success">
+                  <div class="panel-heading">
+                    Similiar Pentagram
                   </div>
-                </div>
-                <div class='form-group'>
-                  <label class='control-label'>Inline checkbox</label>
-                  <br>
-                  <div class='checkbox-inline'>
-                    <input type='checkbox' value=''>
-                    1
-                  </div>
-                  <div class='checkbox-inline'>
-                    <input type='checkbox' value=''>
-                    2
-                  </div>
-                  <div class='checkbox-inline'>
-                    <input type='checkbox' value=''>
-                    3
-                  </div>
-                </div>
-                <div class='form-group'>
-                  <label class='control-label'>Radio</label>
-                  <div class='radio'>
-                    <input checked name='options_radio' type='radio' value='option1'>
-                    Option one is this and that&mdash;be sure to include why it's great
+
+                  <div class="panel-body">
                     <br>
-                    <input checked name='options_radio' type='radio' value='option2'>
-                    Option two can be something else and selecting it will deselect option one
+                    <table class="table table-bordered table-responsive">
+                      <thead>
+                        <tr>
+                          <th>N-Gram</th>
+                          <th>Count</th>
+                          <th>Probability</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <?php 
+                          $query = $db->query("SELECT * FROM pentagram WHERE WORD1='".$firstWord."' AND WORD2='".$secondWord."' AND WORD5!='".$fifthWord."' ORDER BY PROBT DESC LIMIT 5");
+
+                          if ($query->num_rows != 0) {
+                            while ($data = $query->fetch_array()) {
+                              echo "<tr>";
+                              echo "<td class='text-left'>".$data['WORD1'].' '.$data['WORD2'].' '.$data['WORD3'].' '.$data['WORD4'].' '.$data['WORD5'].'</td>';
+                              echo "<td class='text-left'>".$data['COUNT'].'</td>';
+                              echo "<td class='text-left'>".$data['PROBT'].'</td>';
+                              echo "</tr>";
+                            }
+                          }else{
+                            echo "<td class='text-center' colspan='3'>No Data Available.";
+                          }
+                        ?>
+                      </tbody>
+                    </table>
                   </div>
-                </div>
-              </fieldset>
-              <fieldset>
-                <legend>Selects</legend>
-                <div class='form-group'>
-                  <label class='control-label'>Single select</label>
-                  <select class='form-control'>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-                <div class='form-group'>
-                  <label class='control-label'>Multiple select</label>
-                  <select class='form-control' multiple>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                  </select>
-                </div>
-              </fieldset>
-              <div class='form-actions'>
-                <button class='btn btn-default' type='submit'>Submit</button>
-                <a class='btn' href='#'>Cancel</a>
+                </div>               
               </div>
-            </form>
+            </div>
           </div>
         </div>
-        <div class='panel panel-default'>
-          <div class='panel-heading'>
-            <i class='icon-edit icon-large'></i>
-            Form Horizontal
-          </div>
-          <div class='panel-body'>
-            <form class='form-horizontal'>
-              <fieldset>
-                <legend>Default inputs</legend>
-                <div class='form-group'>
-                  <label class='col-lg-2 control-label'>Text field</label>
-                  <div class='col-lg-10'>
-                    <input class='form-control' placeholder='Enter username' type='text'>
-                  </div>
-                </div>
-                <div class='form-group'>
-                  <label class='col-lg-2 control-label'>Password field</label>
-                  <div class='col-lg-10'>
-                    <input class='form-control' placeholder='Enter password' type='password'>
-                  </div>
-                </div>
-                <div class='form-group'>
-                  <label class='col-lg-2 control-label'>Input field with help</label>
-                  <div class='col-lg-10'>
-                    <input class='form-control' placeholder='.help-block'>
-                    <p class='help-block'>Example block-level help text here.%fieldset</p>
-                  </div>
-                </div>
-                <legend>Validation inputs</legend>
-                <div class='form-group has-warning'>
-                  <label class='col-lg-2 control-label'>Text field</label>
-                  <div class='col-lg-10'>
-                    <input class='form-control' placeholder='Enter username' type='text'>
-                  </div>
-                </div>
-                <div class='form-group has-error'>
-                  <label class='col-lg-2 control-label'>Password field</label>
-                  <div class='col-lg-10'>
-                    <input class='form-control' placeholder='Enter password' type='password'>
-                  </div>
-                </div>
-                <div class='form-group has-success'>
-                  <label class='col-lg-2 control-label'>Input field with help</label>
-                  <div class='col-lg-10'>
-                    <input class='form-control' placeholder='.help-block'>
-                    <p class='help-block'>Example block-level help text here.</p>
-                  </div>
-                </div>
-              </fieldset>
-              <div class='form-actions'>
-                <button class='btn btn-default' type='submit'>Save</button>
-                <a class='btn' href='#'>Cancel</a>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class='panel panel-default'>
-          <div class='panel-heading'>
-            <i class='icon-edit icon-large'></i>
-            Knob Inputs
-          </div>
-          <div class='panel-body text-center'>
-            <input class='knob' data-height='150' data-width='150' type='text' value='75'>
-            <input class='knob' data-fgColor='#16a085' data-height='150' data-width='150' type='text' value='100'>
-            <input class='knob' data-fgColor='#7f8c8d' data-height='150' data-width='150' type='text' value='200'>
-          </div>
-        </div>
-      </div>
+
+        <?php 
+        }
+        ?>
+        <!-- end of isset submit -->
+
     </div>
-    <!-- Footer -->
-    <?php 
+    <!-- end of container -->
+    
+    <?php  
       include 'footer.php';
     ?>
   </body>
