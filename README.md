@@ -29,8 +29,6 @@ After the documents were collected, each document was preprocessed with followin
 - removing extra characters like `. , ? !`informal multiple character like: `aduuuuuuuuuuuuuuuuuh`
 - replacing some non-ASCII characters with its ASCII counterpart, for example replacing `”` character inside document with `"` character.
 
-Statistics of this plagiarism corpus in bahasa Indonesia are as follows.
-
 **Document statistics**
 
 - Source documents = **30**
